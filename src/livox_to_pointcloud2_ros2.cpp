@@ -27,7 +27,7 @@ LivoxToPointCloud2::LivoxToPointCloud2(const rclcpp::NodeOptions& options) : rcl
 #ifdef LIVOX_ROS_DRIVER2
   // livox_ros_driver2
   livox2_sub = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(
-    "/livox2/lidar",
+    "/livox/lidar",
     rclcpp::SensorDataQoS(),
     [this](const livox_ros_driver2::msg::CustomMsg::ConstSharedPtr livox_msg) {
       const auto points_msg = converter.convert(*livox_msg);
